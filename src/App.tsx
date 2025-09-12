@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
+import Alert from "./components/Alert/Alert";
+import Button from "./components/Button/Button";
 
 function App() {
   const [hideAlert, setHideAlert] = useState(true);
