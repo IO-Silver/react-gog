@@ -2,6 +2,7 @@ import { useForm, FieldValues } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import categories from "../../categories";
+import { useEffect } from "react";
 
 const schema = z.object({
   description: z.string().min(3, { message: "Description should be at least 3 characters long" }),
@@ -24,6 +25,10 @@ const Form = ({ onSubmit }: FormProps) => {
     reset,
     formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
+
+  const effect = useEffect(() => {
+    console.log("errors", errors);
+  }, [errors]);
 
   return (
     <form
