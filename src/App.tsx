@@ -15,7 +15,7 @@ export type Expense = {
 };
 
 function App() {
-  const [nextID, setNextID] = useState(0);
+  const [nextID, setNextID] = useState(0); // This should be something we track in a DB usually
   const [currentCategory, setCurrentCategory] = useState("All Categories");
   const [expenses, setExpenses] = useState<Expense[]>([
     { id: 1, description: "Grocery shopping", amount: 50, category: "Groceries" },
