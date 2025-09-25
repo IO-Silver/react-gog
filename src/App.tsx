@@ -5,7 +5,6 @@ import ExpenseFilter from "./components/ExpenseFilter/ExpenseFilter";
 import "./App.css";
 import categories from "./categories";
 import { produce } from "immer";
-import { set } from "zod";
 
 export type Expense = {
   id: number;
