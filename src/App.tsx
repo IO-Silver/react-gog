@@ -5,6 +5,7 @@ import ExpenseFilter from "./components/ExpenseFilter/ExpenseFilter";
 import "./App.css";
 import categories from "./categories";
 import { produce } from "immer";
+import { set } from "zod";
 
 export type Expense = {
   id: number;
@@ -14,6 +15,7 @@ export type Expense = {
 };
 
 function App() {
+  const [nextID, setNextID] = useState(0);
   const [currentCategory, setCurrentCategory] = useState("All Categories");
   const [expenses, setExpenses] = useState<Expense[]>([
     { id: 1, description: "Grocery shopping", amount: 50, category: "Groceries" },
@@ -23,9 +25,10 @@ function App() {
 
   const handleSubmit = (data: any) => {
     const newExpense = {
-      id: expenses.length + 1, // change this
+      id: nextID, // change this
       ...data,
     };
+    setNextID(nextID + 1);
     setExpenses(
       produce((draft) => {
         draft.push(newExpense);
