@@ -40,6 +40,7 @@ function App() {
     : expenses;
 
   return (
+    // It's a comment!
     <div>
       <div className="mb-3">
         <Form onSubmit={handleSubmit} />
