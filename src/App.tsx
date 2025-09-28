@@ -17,9 +17,9 @@ function App() {
   const [nextID, setNextID] = useState(0); // This should be something we track in a DB usually
   const [currentCategory, setCurrentCategory] = useState("All Categories");
   const [expenses, setExpenses] = useState<Expense[]>([
-    { id: 1, description: "Grocery shopping", amount: 50, category: "Groceries" },
-    { id: 2, description: "Electricity bill", amount: 75, category: "Utilities" },
-    { id: 3, description: "Movie night", amount: 30, category: "Entertainment" },
+    { id: 0, description: "Grocery shopping", amount: 50, category: "Groceries" },
+    { id: 1, description: "Electricity bill", amount: 75, category: "Utilities" },
+    { id: 2, description: "Movie night", amount: 30, category: "Entertainment" },
   ]);
 
   const handleSubmit = (data: any) => {
